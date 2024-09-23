@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fresh Finds - Admin Account Verification Confirmation</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #555;
+            --background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            text-align: center;
+            margin: 40px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2,
+        p {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #1e70bf;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Fresh Finds!</h1>
+    <p>Thank you for registering as an admin. To ensure the security of your account, please verify your email address by clicking the button below:</p>
+    <h2>Your name: {{name}}</h2>
+    <h2>Your username: {{username}}</h2>
+    <h2>Your email: {{email}}</h2>
+    <a href="{{link}}" style="margin-top: 20px;">Verify Your Fresh Finds Admin Account</a>
+    <p>If you didn't create an account with Fresh Finds, please ignore this email.</p>
+</body>
+</html>

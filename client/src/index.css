@@ -1,0 +1,217 @@
+/* Font */
+/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700,800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Font: Jakarta Sans */
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  */
+html {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html,
+body {
+  /* scroll-behavior: smooth; */
+}
+
+/* Shopping Cart: checkout button */
+.cssbuttons-io-button {
+  background: #00a67c;
+  color: white;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  border-radius: 0.9em;
+  border: none;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #008d69;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #008d69;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #00a67c;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+/* Shopping cart: scrollbar */
+#shopping-cart-scroll::-webkit-scrollbar {
+  width: 7px;
+  cursor: pointer;
+  /*background-color: rgba(229, 231, 235, var(--bg-opacity));*/
+}
+#shopping-cart-scroll::-webkit-scrollbar-track {
+  background-color: #e1e5eb;
+  cursor: pointer;
+  /*background: red;*/
+}
+#shopping-cart-scroll::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: #a0aec0;
+  border-radius: 10px;
+
+  /*outline: 1px solid slategrey;*/
+}
+
+/* General Modal Scrollbar */
+#modal-scroll::-webkit-scrollbar {
+  width: 5px;
+  cursor: pointer;
+}
+#modal-scroll::-webkit-scrollbar-track {
+  background-color: #edefef;
+  cursor: pointer;
+}
+#modal-scroll::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: #d5d9d9;
+  border-radius: 10px;
+}
+
+/* underline */
+#underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  transition: all 0.3s ease;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+#underline-wrapper:hover #underline {
+  transform: scaleX(1);
+}
+
+/* transition div bg */
+.bg-transition {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-transition-blue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #e7f0ff;
+  transition: left 0.3s ease;
+}
+
+.bg-transition-blue:hover::before {
+  left: 0;
+}
+
+.bg-transition-orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #fef0ea;
+  transition: left 0.3s ease;
+}
+
+.bg-transition-orange:hover::before {
+  left: 0;
+}
+
+.bg-transition-green::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #eafaef;
+  transition: left 0.3s ease;
+}
+
+.bg-transition-green:hover::before {
+  left: 0;
+}
+
+/* Pulse effect */
+/* #E1F5EF */
+.pulse-effect {
+  border-radius: 9999px;
+  background-color: #e1f5ef;
+  animation: 1.5s pulse infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #e1f5ef;
+  }
+
+  100% {
+    box-shadow: 0 0 0 14px #e1f5ef00;
+  }
+}
+
+/* Homepage: No scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+/* About */
+#about-title {
+  font-family: 'DM Serif Display', serif;
+}

@@ -1,0 +1,22 @@
+const adminController = require('../controllers/admin.controller')
+const { checkRegisterAdmin, checkLoginAdmin } = require('../middleware/admin/admin.validator')
+const { checkRoleAdmin, verifyTokenAdmin } = require('../middleware/admin/admin.auth')
+const { multerUploadProfile } = require('../middleware/admin/admin.multer')
+const adminRouter = require('express').Router()
+
+adminRouter.post('/', verifyTokenAdmin, checkRoleAdmin, checkRegisterAdmin, adminController.createAdmin)
+adminRouter.post('/safreshfinds', checkRegisterAdmin, adminController.superAdmin)
+adminRouter.get('/', verifyTokenAdmin, checkRoleAdmin, adminController.getAllAdmin)
+adminRouter.get('/no-pagination', verifyTokenAdmin, checkRoleAdmin, adminController.getAllAdminNoPagination)
+adminRouter.delete('/:id', verifyTokenAdmin, checkRoleAdmin, adminController.deleteAdmin)
+adminRouter.patch('/', verifyTokenAdmin, multerUploadProfile().single('image'), adminController.updateAdmin)
+adminRouter.patch('/verification', verifyTokenAdmin, adminController.updateVerifiedAdmin)
+adminRouter.post('/login', checkLoginAdmin, adminController.loginAdmin)
+adminRouter.get('/keep-login', verifyTokenAdmin, adminController.keepLoginAdmin)
+adminRouter.get('/total', verifyTokenAdmin, adminController.getTotalAdmin)
+adminRouter.post('/logout', verifyTokenAdmin, adminController.logoutAdmin)
+adminRouter.get('/forgot-password', adminController.forgotPassword)
+adminRouter.patch('/password', verifyTokenAdmin, adminController.updatePasswordAdmin)
+adminRouter.get('/vercode', verifyTokenAdmin, adminController.getVerCode)
+
+module.exports = adminRouter
